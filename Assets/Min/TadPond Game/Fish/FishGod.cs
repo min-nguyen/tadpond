@@ -10,6 +10,8 @@ public class FishGod : MonoBehaviour, OrganismGodInterface{
     private List<GameObject> fish = new List<GameObject>();
     private float POPULATION = 0;
     private float timer = 0f;
+    private float GLOBAL_HEALTH = 0f;
+    float nutrients, sunlight, rain, watertemp, airtemp, pH, oxygen, algaeHealth;
 
     // Use this for initialization
     void Start () {
@@ -42,7 +44,40 @@ public class FishGod : MonoBehaviour, OrganismGodInterface{
                                     float oxygen,
                                     float algaeHealth)
     {
+        this.nutrients = nutrients;
+        this.sunlight = sunlight;
+        this.rain = rain;
+        this.watertemp = watertemp;
+        this.airtemp = airtemp;
+        this.pH = pH;
+        this.oxygen = oxygen;
+        this.algaeHealth = algaeHealth;
+        CalculateHealth();
+    }
 
+    void CalculateHealth()
+    {
+        GLOBAL_HEALTH = Mathf.Log10((algaeHealth + nutrients) * 50);
+    }
+
+    void Update()
+    {
+        timer += Time.deltaTime;
+        if (fish.Count > 0)
+        {
+        /* *
+        * 
+        * DO SOMETHING WITH GLOBAL_HEALTH
+        * 
+        * */
+        }
+    }
+
+    public void Kill(GameObject fish_)
+    {
+        fish.Remove(fish_);
+        Destroy(fish_);
+        POPULATION--;
     }
 
     public void Spawn(int num)
@@ -118,15 +153,5 @@ public class FishGod : MonoBehaviour, OrganismGodInterface{
             }
     }
     
-    void Update()
-    {
-        
-    }
-
-    public void Kill(GameObject fish_)
-    {
-        fish.Remove(fish_);
-        Destroy(fish_);
-        POPULATION--;
-    }
+    
 }

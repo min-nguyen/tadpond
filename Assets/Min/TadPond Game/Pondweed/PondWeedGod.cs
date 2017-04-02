@@ -7,10 +7,9 @@ public class PondWeedGod : MonoBehaviour, OrganismGodInterface{
     public GameObject PONDWEED;
     public List<int> boundary_LRUD;
     private List<GameObject> pondweed = new List<GameObject>();
-    private float SPAWN_RATE = 5f;
-    private float GLOBAL_HEALTH = 0f;
     private float POPULATION = 0;
     private float timer = 0f;
+    private float GLOBAL_HEALTH = 0f;
     float nutrients, sunlight, rain, watertemp, airtemp, pH, oxygen, algaeHealth;
 
     // Use this for initialization
@@ -36,24 +35,15 @@ public class PondWeedGod : MonoBehaviour, OrganismGodInterface{
         boundary_LRUD.Insert(2, LRUD[2]);
         boundary_LRUD.Insert(3, LRUD[3]);
     }
-
-    public void UpdateEnvironmentalValues(float nutrients,
-                                    float sunlight,
-                                    float rain,
-                                    float waterTemp,
-                                    float airTemp,
-                                    float pH,
-                                    float oxygen,
-                                    float algaeHealth)
+    
+    void InitialisePondWeed()
     {
-        this.nutrients = nutrients;
-        this.sunlight = sunlight;
-        this.rain = rain;
-        this.watertemp = waterTemp;
-        this.airtemp = airTemp;
-        this.pH = pH;
-        this.oxygen = oxygen;
-        this.algaeHealth = algaeHealth;
+        //Set up pond weed
+        for (int i = boundary_LRUD[0]; i < boundary_LRUD[1]; i += 2)
+        {
+            float randY = Random.Range(-1, 1);
+            Spawn(1, new Vector3(i, boundary_LRUD[3] + randY));
+        }
     }
 
     public void Spawn(int num)
@@ -76,21 +66,25 @@ public class PondWeedGod : MonoBehaviour, OrganismGodInterface{
             ++POPULATION;
         }
     }
-    void InitialisePondWeed()
-    {
-        //Set up pond weed
-        for (int i = boundary_LRUD[0]; i < boundary_LRUD[1]; i += 2)
-        {
-            float randY = Random.Range(-1, 1);
-            Spawn(1, new Vector3(i, boundary_LRUD[3] + randY));
-        }
-    }
 
-    public void Kill(GameObject pondweed_)
+    public void UpdateEnvironmentalValues(float nutrients,
+                                    float sunlight,
+                                    float rain,
+                                    float waterTemp,
+                                    float airTemp,
+                                    float pH,
+                                    float oxygen,
+                                    float algaeHealth)
     {
-        pondweed.Remove(pondweed_);
-        Destroy(pondweed_);
-        POPULATION--;
+        this.nutrients = nutrients;
+        this.sunlight = sunlight;
+        this.rain = rain;
+        this.watertemp = waterTemp;
+        this.airtemp = airTemp;
+        this.pH = pH;
+        this.oxygen = oxygen;
+        this.algaeHealth = algaeHealth;
+        CalculateHealth();
     }
 
     void CalculateHealth()
@@ -100,12 +94,10 @@ public class PondWeedGod : MonoBehaviour, OrganismGodInterface{
 
     void Update()
     {
-        timer += Time.deltaTime;
-
         if (sunlight > 0.7f)
         {
+            timer += Time.deltaTime;
             int p = (int)Random.Range(0, pondweed.Count);
-            CalculateHealth();
             if (timer * GLOBAL_HEALTH > 1)
             {
                 pondweed[p].GetComponent<PondWeedController>().UpdateHealth(1);
@@ -113,5 +105,12 @@ public class PondWeedGod : MonoBehaviour, OrganismGodInterface{
             }
         }
 
+    }
+
+    public void Kill(GameObject pondweed_)
+    {
+        pondweed.Remove(pondweed_);
+        Destroy(pondweed_);
+        POPULATION--;
     }
 }

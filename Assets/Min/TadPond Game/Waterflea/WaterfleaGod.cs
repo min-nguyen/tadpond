@@ -9,6 +9,8 @@ public class WaterfleaGod : MonoBehaviour, OrganismGodInterface{
     private List<GameObject> waterfleas = new List<GameObject>();
     private float POPULATION = 0;
     private float timer = 0f;
+    private float GLOBAL_HEALTH = 0f;
+    float nutrients, sunlight, rain, watertemp, airtemp, pH, oxygen, algaeHealth;
 
     // Use this for initialization
     void Start()
@@ -55,20 +57,44 @@ public class WaterfleaGod : MonoBehaviour, OrganismGodInterface{
     }
 
     public void UpdateEnvironmentalValues(float nutrients,
-                                    float sunlight,
-                                    float rain,
-                                    float watertemp,
-                                    float airtemp,
-                                    float pH,
-                                    float oxygen,
-                                    float algaeHealth)
+                                 float sunlight,
+                                 float rain,
+                                 float watertemp,
+                                 float airtemp,
+                                 float pH,
+                                 float oxygen,
+                                 float algaeHealth)
     {
+        this.nutrients = nutrients;
+        this.sunlight = sunlight;
+        this.rain = rain;
+        this.watertemp = watertemp;
+        this.airtemp = airtemp;
+        this.pH = pH;
+        this.oxygen = oxygen;
+        this.algaeHealth = algaeHealth;
+        CalculateHealth();
+    }
 
+    void CalculateHealth()
+    {
+        GLOBAL_HEALTH = Mathf.Log10((algaeHealth + nutrients) * 50);
     }
 
     void Update()
     {
-        
+        if (waterfleas.Count > 0)
+        {
+            timer += Time.deltaTime;
+            int p = (int)Random.Range(0, waterfleas.Count);
+
+            if (timer * GLOBAL_HEALTH > 1)
+            {
+                Vector3 spawn_pos = waterfleas[p].GetComponent<Transform>().position;
+                Spawn(1, spawn_pos);
+                timer = 0f;
+            }
+        }
     }
 
     public void Kill(GameObject waterflea_)

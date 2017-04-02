@@ -9,6 +9,9 @@ public class TadpoleGod : MonoBehaviour, OrganismGodInterface{
     public int flocksize = 5;
     private List<GameObject> tadpoles = new List<GameObject>();
     private float POPULATION = 0;
+    private float timer = 0f;
+    private float GLOBAL_HEALTH = 0f;
+    float nutrients, sunlight, rain, watertemp, airtemp, pH, oxygen, algaeHealth;
 
     // Use this for initialization
     void Start () {
@@ -45,7 +48,32 @@ public class TadpoleGod : MonoBehaviour, OrganismGodInterface{
                                     float oxygen,
                                     float algaeHealth)
     {
+        this.nutrients = nutrients;
+        this.sunlight = sunlight;
+        this.rain = rain;
+        this.watertemp = watertemp;
+        this.airtemp = airtemp;
+        this.pH = pH;
+        this.oxygen = oxygen;
+        this.algaeHealth = algaeHealth;
+        CalculateHealth();
+    }
 
+    void CalculateHealth()
+    {
+        GLOBAL_HEALTH = Mathf.Log10((algaeHealth + nutrients) * 50);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        TestingMode();
+
+        /* *
+        * 
+        * DO SOMETHING WITH GLOBAL_HEALTH
+        * 
+        * */
     }
 
     //Spawn an existing egg
@@ -109,10 +137,7 @@ public class TadpoleGod : MonoBehaviour, OrganismGodInterface{
         }
     }
 	
-	// Update is called once per frame
-	void Update () {
-        TestingMode();
-	}
+	
 
     void TestingMode()
     {

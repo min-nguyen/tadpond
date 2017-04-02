@@ -67,22 +67,29 @@ public class ZooplanktonGod : MonoBehaviour, OrganismGodInterface {
                                     float oxygen,
                                     float algaeHealth)
     {
-
+        this.nutrients = nutrients;
+        this.sunlight = sunlight;
+        this.rain = rain;
+        this.watertemp = watertemp;
+        this.airtemp = airtemp;
+        this.pH = pH;
+        this.oxygen = oxygen;
+        this.algaeHealth = algaeHealth;
+        CalculateHealth();
     }
 
     void CalculateHealth()
     {
-        GLOBAL_HEALTH = ((algaeHealth + nutrients) * 50) ;
+        GLOBAL_HEALTH = Mathf.Log10((algaeHealth + nutrients) * 50);
     }
 
     void Update()
     {
-        timer += Time.deltaTime;
-
-        if (sunlight > 0.7f)
+        if (zooplankton.Count > 0)
         {
+            timer += Time.deltaTime;
             int p = (int)Random.Range(0, zooplankton.Count);
-            CalculateHealth();
+            
             if (timer * GLOBAL_HEALTH > 1)
             {
                 Vector3 spawn_pos = zooplankton[p].GetComponent<Transform>().position;

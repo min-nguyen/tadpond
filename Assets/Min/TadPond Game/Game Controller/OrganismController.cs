@@ -138,6 +138,7 @@ public class OrganismController : MonoBehaviour {
         ZooplanktonGodScript.UpdateEnvironmentalValues(nutrients, sunlight, rain, waterTemp, airTemp, pH, oxygen, algaeHealth);
         WaterfleaGodScript.UpdateEnvironmentalValues(nutrients, sunlight, rain, waterTemp, airTemp, pH, oxygen, algaeHealth);
         FishGodScript.UpdateEnvironmentalValues(nutrients, sunlight, rain, waterTemp, airTemp, pH, oxygen, algaeHealth);
+        DuckGodScript.UpdateEnvironmentalValues(nutrients, sunlight, rain, waterTemp, airTemp, pH, oxygen, algaeHealth);
     }
 
 	void Update () {
