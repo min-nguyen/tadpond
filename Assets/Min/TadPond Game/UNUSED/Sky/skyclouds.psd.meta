@@ -1,0 +1,311 @@
+fileFormatVersion: 2
+guid: 9c22725f987d43847aca5f34c4d81846
+timeCreated: 1479013167
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: skyclouds_0
+    21300002: skyclouds_1
+    21300004: skyclouds_2
+    21300006: skyclouds_3
+    21300008: skyclouds_4
+    21300010: skyclouds_5
+    21300012: skyclouds_6
+    21300014: skyclouds_7
+    21300016: skyclouds_8
+    21300018: skyclouds_9
+    21300020: skyclouds_10
+    21300022: skyclouds_11
+    21300024: skyclouds_12
+    21300026: skyclouds_13
+    21300028: skyclouds_14
+    21300030: skyclouds_15
+    21300032: skyclouds_16
+    21300034: skyclouds_17
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 2
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: skyclouds_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1224
+        width: 387
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skyclouds_1
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 1299
+        width: 220
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skyclouds_2
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 1257
+        width: 279
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skyclouds_3
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 1310
+        width: 172
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skyclouds_4
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 1228
+        width: 74
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skyclouds_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 983
+        width: 507
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skyclouds_6
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 1074
+        width: 172
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skyclouds_7
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 978
+        width: 740
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skyclouds_8
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 1126
+        width: 440
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skyclouds_9
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 851
+        width: 220
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skyclouds_10
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 916
+        width: 220
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skyclouds_11
+      rect:
+        serializedVersion: 2
+        x: 1777
+        y: 916
+        width: 113
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skyclouds_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 788
+        width: 78
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skyclouds_13
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 797
+        width: 224
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skyclouds_14
+      rect:
+        serializedVersion: 2
+        x: 1794
+        y: 788
+        width: 96
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skyclouds_15
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 104
+        width: 397
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skyclouds_16
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 104
+        width: 580
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skyclouds_17
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 119
+        width: 619
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

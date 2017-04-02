@@ -1,0 +1,314 @@
+fileFormatVersion: 2
+guid: f390c7ff8ddc2024c9f9e39ba1293ce6
+timeCreated: 1486329241
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: CarpLeft_0
+    21300002: CarpLeft_6
+    21300004: CarpLeft_12
+    21300006: CarpLeft_1
+    21300008: CarpLeft_7
+    21300010: CarpLeft_13
+    21300012: CarpLeft_2
+    21300014: CarpLeft_8
+    21300016: CarpLeft_14
+    21300018: CarpLeft_3
+    21300020: CarpLeft_9
+    21300022: CarpLeft_15
+    21300024: CarpLeft_4
+    21300026: CarpLeft_10
+    21300028: CarpLeft_16
+    21300030: CarpLeft_5
+    21300032: CarpLeft_11
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CarpLeft_0
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 956
+        width: 321
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CarpLeft_6
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 961
+        width: 321
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CarpLeft_12
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 961
+        width: 321
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CarpLeft_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 766
+        width: 321
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CarpLeft_7
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 780
+        width: 321
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CarpLeft_13
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 780
+        width: 321
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CarpLeft_2
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 579
+        width: 321
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CarpLeft_8
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 590
+        width: 321
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CarpLeft_14
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 590
+        width: 321
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CarpLeft_3
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 390
+        width: 322
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CarpLeft_9
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 405
+        width: 322
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CarpLeft_15
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 410
+        width: 322
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CarpLeft_4
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 206
+        width: 323
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CarpLeft_10
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 206
+        width: 322
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CarpLeft_16
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 215
+        width: 322
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CarpLeft_5
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 42
+        width: 322
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CarpLeft_11
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 42
+        width: 321
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

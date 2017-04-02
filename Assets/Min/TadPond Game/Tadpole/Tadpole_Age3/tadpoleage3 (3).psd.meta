@@ -1,0 +1,227 @@
+fileFormatVersion: 2
+guid: 5634a04a1c558fa459e82ee05781580b
+timeCreated: 1484848333
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Tadpole_Age3_Swim0
+    21300002: Tadpole_Age3_Swim8
+    21300004: Tadpole_Age3_Swim1
+    21300006: Tadpole_Age3_Swim9
+    21300008: Tadpole_Age3_Swim2
+    21300010: Tadpole_Age3_Swim10
+    21300012: Tadpole_Age3_Swim3
+    21300014: Tadpole_Age3_Swim11
+    21300016: Tadpole_Age3_Swim4
+    21300018: Tadpole_Age3_Swim5
+    21300020: Tadpole_Age3_Swim6
+    21300022: Tadpole_Age3_Swim7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tadpole_Age3_Swim0
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 3260
+        width: 651
+        height: 292
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tadpole_Age3_Swim8
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 3116
+        width: 651
+        height: 430
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tadpole_Age3_Swim1
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 2895
+        width: 651
+        height: 312
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tadpole_Age3_Swim9
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 2675
+        width: 651
+        height: 379
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tadpole_Age3_Swim2
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 2471
+        width: 651
+        height: 369
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tadpole_Age3_Swim10
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 2221
+        width: 651
+        height: 371
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tadpole_Age3_Swim3
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 2035
+        width: 651
+        height: 378
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tadpole_Age3_Swim11
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 1817
+        width: 651
+        height: 313
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tadpole_Age3_Swim4
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 1546
+        width: 651
+        height: 429
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tadpole_Age3_Swim5
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 1057
+        width: 651
+        height: 427
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tadpole_Age3_Swim6
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 620
+        width: 651
+        height: 376
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Tadpole_Age3_Swim7
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 138
+        width: 651
+        height: 425
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

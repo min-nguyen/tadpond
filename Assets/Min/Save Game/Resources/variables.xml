@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Variable_x0020_Collection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Variable>
+    <Variable Title="Variables">
+      <WaterTemp>11.0333328</WaterTemp>
+      <AirTemp>13.791667</AirTemp>
+      <PH>5</PH>
+      <Oxygen>8.275</Oxygen>
+      <SunlightSlider>0.5</SunlightSlider>
+      <NutrientSlider>0.5</NutrientSlider>
+      <RainSLider>0.5</RainSLider>
+      <Time>174</Time>
+      <Health>24.2503986</Health>
+    </Variable>
+    <Variable Title="Variables">
+      <WaterTemp>11.0333328</WaterTemp>
+      <AirTemp>13.791667</AirTemp>
+      <PH>5</PH>
+      <Oxygen>8.275</Oxygen>
+      <SunlightSlider>0.5</SunlightSlider>
+      <NutrientSlider>0.5</NutrientSlider>
+      <RainSLider>0.5</RainSLider>
+      <Time>174</Time>
+      <Health>24.2503986</Health>
+    </Variable>
+  </Variable>
+</Variable_x0020_Collection>
