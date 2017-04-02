@@ -133,10 +133,20 @@ public class ZooplanktonController : MonoBehaviour, OrganismInterface  {
 
     void NewRandomPosition()
     {
+        
         float x = Random.Range(-5, 5);
         float y = Random.Range(-5, 5);
+        while (originalPosition.x + x < boundary_LRUD[0] || originalPosition.x + x > boundary_LRUD[1])
+        {
+            x = Random.Range(-5, 5);
+        }
+        while (originalPosition.y + y < boundary_LRUD[3] || (originalPosition.y + y > (boundary_LRUD[2] - (boundary_LRUD[2] - boundary_LRUD[3])*0.6)))
+        {
+            y = Random.Range(-5, 5);
+        }
         speed = Random.Range(0.03f, 0.05f);
         destination = new Vector3(originalPosition.x + x, originalPosition.y + y);
+        originalPosition = destination;
     }
 
     float Magnitude(float v)
