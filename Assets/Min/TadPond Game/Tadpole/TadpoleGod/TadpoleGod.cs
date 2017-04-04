@@ -11,6 +11,7 @@ public class TadpoleGod : MonoBehaviour, OrganismGodInterface{
     private float POPULATION = 0;
     private float timer = 0f;
     private float GLOBAL_HEALTH = 0f;
+    private float UPDATE_HEALTH_RATE = 1f;
     float nutrients, sunlight, rain, watertemp, airtemp, pH, oxygen, algaeHealth;
 
     // Use this for initialization
@@ -26,6 +27,7 @@ public class TadpoleGod : MonoBehaviour, OrganismGodInterface{
             boundary_LRUD.Insert(2, 10);
             boundary_LRUD.Insert(3, -10);
         }
+        InvokeRepeating("UpdateHealth", 2, UPDATE_HEALTH_RATE);
     }
 
 
@@ -64,23 +66,27 @@ public class TadpoleGod : MonoBehaviour, OrganismGodInterface{
         GLOBAL_HEALTH = Mathf.Log10((algaeHealth + nutrients) * 50);
     }
 
+    void UpdateHealth()
+    {
+        for (int i = 0; i < tadpoles.Count; i++)
+        {
+            if (tadpoles[i] != null)
+                tadpoles[i].GetComponent<TadpoleController>().IncreaseHealth(GLOBAL_HEALTH);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
         TestingMode();
-
-        /* *
-        * 
-        * DO SOMETHING WITH GLOBAL_HEALTH
-        * 
-        * */
     }
+
 
     //Spawn an existing egg
     public void Spawn(int num)
     {
         Spawn(num, new Vector3());
     }
+
     public void Spawn(int num, Vector3 position)
     {
         int n = num;

@@ -22,7 +22,7 @@ public class Tadpole_Age2_Controller : MonoBehaviour, OrganismInterface {
     public List<string> prey;
     public List<string> predators;
     public float health = 0;
-    
+    private float healthLIMIT = 50f;
 
     // Use this for initialization
     void Start()
@@ -197,9 +197,9 @@ public class Tadpole_Age2_Controller : MonoBehaviour, OrganismInterface {
 
     void Eat(Collider2D food)
     {
-        Destroy(food.gameObject);
-        health++;
-        if (health >= 5 && MAIN_TADPOLE_CONTROLLER != null)
+        Destroy(food.gameObject);   // Should call the food's god destroy
+        health += 10;
+        if (health >= healthLIMIT && MAIN_TADPOLE_CONTROLLER != null)
             MAIN_TADPOLE_CONTROLLER_SCRIPT.HatchTadpoleAge3();
     }
 

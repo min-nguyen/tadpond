@@ -16,13 +16,12 @@ public class Tadpole_Age3_Controller : MonoBehaviour, OrganismInterface {
     private bool chasing = false;
     Animator animator;
     //HEALTH RELATED VARIABLES
-    private float health = 0;
     public List<string> prey;
     public List<string> predators;
-    
-
-	// Use this for initialization
-	void Start () {
+    public float health = 0f;
+    private float healthLIMIT = 50f;
+    // Use this for initialization
+    void Start () {
         animator = GetComponent<Animator>();
         RuntimeAnimatorController ac = animator.runtimeAnimatorController;
         for (int i = 0; i < ac.animationClips.Length; i++)
@@ -60,7 +59,7 @@ public class Tadpole_Age3_Controller : MonoBehaviour, OrganismInterface {
     void Update()
     {
         timer += Time.deltaTime;
-        if(health >= 5)
+        if(health >= healthLIMIT)
         {
             EscapeFromPond();
         }
@@ -124,19 +123,13 @@ public class Tadpole_Age3_Controller : MonoBehaviour, OrganismInterface {
     void OnTriggerEnter2D(Collider2D col)
     {
         if (prey.Contains(col.gameObject.tag))
-        {
             Eat(col);
-        }
-        else if (predators.Contains(col.gameObject.tag))
-        {
-            Die();
-        }
     }
 
     void Eat(Collider2D food)
     {
-        Destroy(food.gameObject);
-        health++;
+        Destroy(food.gameObject); // Should call the food's god destroy
+        health += 10;
     }
 
     void EscapeFromPond()

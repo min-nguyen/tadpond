@@ -152,6 +152,27 @@ public class TadpoleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+    }
+
+    public void IncreaseHealth(float h)
+    {
+        if (STATE == TADPOLE_STATE.EGG)
+        {
+            currentTadpole.GetComponent<TadpoleEggController>().health += h;
+        }
+        else if (STATE == TADPOLE_STATE.AGE1)
+        {
+            currentTadpole.GetComponent<Tadpole_Age1_Controller>().health += h;
+        }
+        else if (STATE == TADPOLE_STATE.AGE2)
+        {
+            currentTadpole.GetComponent<Tadpole_Age2_Controller>().health += h;
+        }
+        else if (STATE == TADPOLE_STATE.AGE3)
+        {
+            currentTadpole.GetComponent<Tadpole_Age3_Controller>().health += h;
+        }
     }
 
     void TestingMode()

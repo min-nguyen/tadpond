@@ -10,7 +10,7 @@ public class TadpoleEggController : MonoBehaviour, OrganismInterface {
     public List<string> predators;
     private GameObject MAIN_TADPOLE_CONTROLLER;
     private float timer;
-    private float health = 0f;
+    public float health = 0f;
     private float vibrateScale;
 
 

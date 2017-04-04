@@ -15,9 +15,8 @@ public class Tadpole_Age1_Controller : MonoBehaviour, OrganismInterface {
     //HEALTH RELATED VARIABLES
     public List<string> prey;
     public List<string> predators;
-    private float health;
-    private float healthTimer;
-    
+    public float health;
+    private float healthLIMIT = 50f;
     // Use this for initialization
     void Start () {
         InvokeRepeating("FindTarget", 0.0f, 2.0f);
@@ -38,8 +37,7 @@ public class Tadpole_Age1_Controller : MonoBehaviour, OrganismInterface {
         minVelocity = 0.3f;
         maxVelocity = 1f;
         randomness = 5f;
-        health = 5f;
-        healthTimer = 0f;
+        health = 0f;
     }
 
     public void SetGod(GameObject main_tadpole)
@@ -63,33 +61,21 @@ public class Tadpole_Age1_Controller : MonoBehaviour, OrganismInterface {
 
     void Eat(Collider2D food)
     {
-        healthTimer = 0f;
-        health++;
+        health += 10;
         transform.localScale = new Vector3(transform.localScale.x + 0.05f, transform.localScale.y + 0.05f);
-        if (health >= 5 && MAIN_TADPOLE_CONTROLLER != null)
+        if (health >= healthLIMIT && MAIN_TADPOLE_CONTROLLER != null)
             MAIN_TADPOLE_CONTROLLER_SCRIPT.HatchTadpoleAge2();
     }
 	
 	// Update is called once per frame
 	void Update () {
         //EnableManualControl();
-        UpdateHealth();
         UpdateMovement();
     }
 
     public void UpdateHealth(float health)
     {
         this.health = health;
-    }
-
-    void UpdateHealth()
-    {
-        healthTimer += Time.deltaTime;
-        if (healthTimer > 3f && health > 0)
-        {
-            health--;
-            healthTimer = 0f;
-        }
     }
 
     void UpdateMovement()
