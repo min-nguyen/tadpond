@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class FishController : MonoBehaviour, OrganismInterface{
 
-    public List<int> boundary_LRUD;
+    public List<float> boundary_LRUD;
     public List<string> prey;
     public List<string> predators;
     private GameObject FISH_GOD;
@@ -44,7 +44,7 @@ public class FishController : MonoBehaviour, OrganismInterface{
         if (boundary_LRUD.Count < 4)
         {
             // Debug.Log("Boundary LRUD for FishController is not initialised in inspector with 4 values - creating default boundaries");
-            boundary_LRUD = new List<int>();
+            boundary_LRUD = new List<float>();
             boundary_LRUD.Insert(0, -10);
             boundary_LRUD.Insert(1, 10);
             boundary_LRUD.Insert(2, 10);
@@ -72,17 +72,14 @@ public class FishController : MonoBehaviour, OrganismInterface{
         if (prey.Contains(coll.tag) && currentState.ToString() == "ChaseState")
         {
             Eat(coll.gameObject);
-            Destroy(coll.gameObject);
         }
-        //else if (predators.Contains(coll.tag))
-        //{
-        //   FISH_GOD.GetComponent<FishGod>().Destroy();
-        //   Destroy(this.gameObject);
-        //}
     }
 
     public void Eat(GameObject coll)
     {
+        OrganismInterface oi = coll.gameObject.GetComponent<OrganismInterface>();
+        oi.Die();
+        target = null;
         //Increase size of object and detector circle
         if (transform.localScale.x < maxSizeScale)
         {
@@ -118,6 +115,8 @@ public class FishController : MonoBehaviour, OrganismInterface{
     //Automatic movement pattern
     void EnableAutomaticBehaviour()
     {
+        currentState.updateState();
+
         //Apply movement boundaries
         if ((transform.position.x < boundary_LRUD[0] && !facingRight))
             setFacingRight();
@@ -155,7 +154,7 @@ public class FishController : MonoBehaviour, OrganismInterface{
             healthTimer = 0;
         }
 
-        currentState.updateState();
+        
     }
 
     public void setFacingRight()

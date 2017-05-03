@@ -8,9 +8,10 @@ public class EnvironmentController : MonoBehaviour {
     /*      Core Components     */
     public GameObject Environment;
     private GameObject Water;
+    private GameObject Rain;
     private WaterController WaterController;
     private OrganismController OrganismController;
-
+    private RainController RainController;
     /*      GUI                     */
     public Button saveButton;
 	public Button loadButton;
@@ -83,7 +84,12 @@ public class EnvironmentController : MonoBehaviour {
             {
                 Water = Environment.transform.GetChild(i).gameObject;
                 WaterController = Water.GetComponent<WaterController>();
-                break;
+                WaterController.SetEnvironmentController(this);
+            }
+            else if (Environment.transform.GetChild(i).tag == "Rain")
+            {
+                Rain = Environment.transform.GetChild(i).gameObject;
+                RainController = Rain.GetComponent<RainController>();
             }
         }
 
@@ -99,6 +105,11 @@ public class EnvironmentController : MonoBehaviour {
 		healthText.text = "Health: " + (((int) health).ToString());
 	}
 
+    public void SetBoundaryLRUD(List<float> boundary_LRUD)
+    {
+        OrganismController.SetBoundaryLRUD(boundary_LRUD);
+    }
+
 	//environmental controllers.
 	public void changeSunlight (float newSunlight) {
 		sunlightSlider = newSunlight;
@@ -108,6 +119,7 @@ public class EnvironmentController : MonoBehaviour {
 	}
 	public void changeRain (float newRain) {
 		rainSlider = newRain;
+        RainController.UpdateRain(newRain);
 	}
 
 	public void organismSelected (int index) {
@@ -212,11 +224,10 @@ public class EnvironmentController : MonoBehaviour {
 		airTemp = 10 + (10 * Mathf.Abs(sunlight - rain));
 
         //Update algae
-        if (Mathf.Abs(7 - pH) > 1)
-            algaeHealth = 2 + (6 * Mathf.Abs(nutrients - sunlight)) / (Mathf.Abs(7 - pH));
-        else
-            algaeHealth = 2 + (6 * Mathf.Abs(nutrients - sunlight));
+        algaeHealth = 2 + (18 * Mathf.Abs(nutrients));
         WaterController.SetAlgaeHealth(algaeHealth);
+        WaterController.SetSunlight(sunlight);
+        WaterController.SetRain(rain);
     }
 
 	private void calculateHealth() {

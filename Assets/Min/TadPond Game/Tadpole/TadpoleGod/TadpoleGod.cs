@@ -5,8 +5,8 @@ using UnityEngine;
 public class TadpoleGod : MonoBehaviour, OrganismGodInterface{
 
     public GameObject FULL_TADPOLE;
-    public List<int> boundary_LRUD;
-    public int flocksize = 5;
+    public List<float> boundary_LRUD;
+    private int flocksize = 20;
     private List<GameObject> tadpoles = new List<GameObject>();
     private float POPULATION = 0;
     private float timer = 0f;
@@ -21,7 +21,7 @@ public class TadpoleGod : MonoBehaviour, OrganismGodInterface{
         if (boundary_LRUD.Count < 4)
         {
            // Debug.Log("Boundary LRUD for TadpoleGod is not initialised in inspector with 4 values - creating default boundaries");
-            boundary_LRUD = new List<int>();
+            boundary_LRUD = new List<float>();
             boundary_LRUD.Insert(0, -10);
             boundary_LRUD.Insert(1, 10);
             boundary_LRUD.Insert(2, 10);
@@ -31,14 +31,17 @@ public class TadpoleGod : MonoBehaviour, OrganismGodInterface{
     }
 
 
-    public void SetBoundaryLRUD(List<int> LRUD)
+    public void SetBoundaryLRUD(List<float> LRUD)
     {
-        boundary_LRUD = new List<int>();
+        boundary_LRUD = new List<float>();
         boundary_LRUD.Insert(0, LRUD[0]);
         boundary_LRUD.Insert(1, LRUD[1]);
         boundary_LRUD.Insert(2, LRUD[2]);
         boundary_LRUD.Insert(3, LRUD[3]);
-  
+        for (int i = 0; i < tadpoles.Count; i++)
+        {
+            tadpoles[i].GetComponent<TadpoleController>().boundary_LRUD = boundary_LRUD;
+        }
     }
 
     public void UpdateEnvironmentalValues(float nutrients,

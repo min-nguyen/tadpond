@@ -26,12 +26,13 @@ public class OrganismController : MonoBehaviour {
     private GameObject Environment;
     private EnvironmentController EnvironmentController;
     private GameObject Water;
-    public List<int> boundary_LRUD; // Optional water boundaries
+    public List<float> boundary_LRUD; // Optional water boundaries
 
     /*      Slider Variables        */
     private float nutrients = 0f, sunlight = 0f, rain = 0f;
     /*      Pond Variables          */
-    private float waterTemp = 0f, airTemp = 0f, pH = 0f, oxygen = 0f, algaeHealth = 0f;
+    private float waterTemp = 0f, airTemp = 0f, pH = 0f, 
+                  oxygen = 0f, algaeHealth = 0f;
 
 
     void OnEnable()
@@ -47,7 +48,7 @@ public class OrganismController : MonoBehaviour {
 
         if (boundary_LRUD.Count < 4)
         {
-            boundary_LRUD = new List<int>();
+            boundary_LRUD = new List<float>();
             boundary_LRUD.Insert(0, -10);
             boundary_LRUD.Insert(1, 10);
             boundary_LRUD.Insert(2, 10);
@@ -66,11 +67,11 @@ public class OrganismController : MonoBehaviour {
                 }
             }
             //Set Boundary_LRUD to Water Size Dimensions manually - Cannot use GetBoundaryLRUD() function in OnEnable().
-            boundary_LRUD = new List<int>();
-            boundary_LRUD.Insert(0, (int)(Water.transform.position.x - (Water.GetComponent<SpriteRenderer>().bounds.size.x / 2)));
-            boundary_LRUD.Insert(1, (int)(Water.transform.position.x + (Water.GetComponent<SpriteRenderer>().bounds.size.x / 2)));
-            boundary_LRUD.Insert(2, (int)(Water.transform.position.y + (Water.GetComponent<SpriteRenderer>().bounds.size.y / 2)));
-            boundary_LRUD.Insert(3, (int)(Water.transform.position.y - (Water.GetComponent<SpriteRenderer>().bounds.size.y / 2)));
+            boundary_LRUD = new List<float>();
+            boundary_LRUD.Insert(0, (Water.transform.position.x - (Water.GetComponent<SpriteRenderer>().bounds.size.x / 2)));
+            boundary_LRUD.Insert(1, (Water.transform.position.x + (Water.GetComponent<SpriteRenderer>().bounds.size.x / 2)));
+            boundary_LRUD.Insert(2, (Water.transform.position.y + (Water.GetComponent<SpriteRenderer>().bounds.size.y / 2)));
+            boundary_LRUD.Insert(3, (Water.transform.position.y - (Water.GetComponent<SpriteRenderer>().bounds.size.y / 2)));
         }
         if (TadpoleGodPrefab != null)
         {
@@ -116,6 +117,16 @@ public class OrganismController : MonoBehaviour {
         }
     }
 
+    public void SetBoundaryLRUD(List<float> boundLRUD)
+    {
+        boundary_LRUD = boundLRUD;
+        TadpoleGodScript.SetBoundaryLRUD(boundary_LRUD);
+        PondWeedGodScript.SetBoundaryLRUD(boundary_LRUD);
+        WaterfleaGodScript.SetBoundaryLRUD(boundary_LRUD);
+        FishGodScript.SetBoundaryLRUD(boundary_LRUD);
+        DuckGodScript.SetBoundaryLRUD(boundary_LRUD);
+    }
+
     void Start()
     {
 
@@ -142,7 +153,7 @@ public class OrganismController : MonoBehaviour {
     }
 
 	void Update () {
-
+       
     }
 
     public void SpawnTadpole()

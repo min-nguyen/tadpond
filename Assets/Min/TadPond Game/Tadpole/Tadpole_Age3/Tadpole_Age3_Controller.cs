@@ -7,7 +7,7 @@ public class Tadpole_Age3_Controller : MonoBehaviour, OrganismInterface {
     private GameObject MAIN_TADPOLE_CONTROLLER;
     private TadpoleController MAIN_TADPOLE_CONTROLLER_SCRIPT;
     //MOVEMENT RELATED VARIABLES
-    public List<int> boundary_LRUD;
+    public List<float> boundary_LRUD;
     private float timer = 0.25f;
     private float swimAnimationLength = 1f;
     private float swimSpeed = 0.02f;
@@ -36,7 +36,7 @@ public class Tadpole_Age3_Controller : MonoBehaviour, OrganismInterface {
         if (boundary_LRUD.Count < 4)
         {
           //  Debug.Log("Boundary LRUD for TadpoleAge3 is not initialised in inspector with 4 values - creating default boundaries");
-            boundary_LRUD = new List<int>();
+            boundary_LRUD = new List<float>();
             boundary_LRUD.Insert(0, -10);
             boundary_LRUD.Insert(1, 10);
             boundary_LRUD.Insert(2, 10);
@@ -62,6 +62,11 @@ public class Tadpole_Age3_Controller : MonoBehaviour, OrganismInterface {
         if(health >= healthLIMIT)
         {
             EscapeFromPond();
+            if (this.transform.position.y > boundary_LRUD[2])
+            {
+                //Do something else
+                Die();
+            }
         }
         else if (!chasing) {
             animator.speed = 0.5f;
@@ -128,7 +133,8 @@ public class Tadpole_Age3_Controller : MonoBehaviour, OrganismInterface {
 
     void Eat(Collider2D food)
     {
-        Destroy(food.gameObject); // Should call the food's god destroy
+        OrganismInterface oi = food.gameObject.GetComponent<OrganismInterface>();
+        oi.Die();
         health += 10;
     }
 

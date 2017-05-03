@@ -10,7 +10,7 @@ public class TadpoleController : MonoBehaviour
 
     public GameObject TADPOLE_EGG, TADPOLE_AGE1, TADPOLE_AGE2, TADPOLE_AGE3;
     public TADPOLE_STATE STATE;
-    public List<int> boundary_LRUD;
+    public List<float> boundary_LRUD;
     private GameObject TADPOLE_GOD;
     private GameObject currentTadpole;
     private Renderer rend;
@@ -25,7 +25,7 @@ public class TadpoleController : MonoBehaviour
         if (boundary_LRUD.Count < 4)
         {
           //  Debug.Log("Boundary LRUD for TadpoleController is not initialised in inspector with 4 values - creating default boundaries");
-            boundary_LRUD = new List<int>();
+            boundary_LRUD = new List<float>();
             boundary_LRUD.Insert(0, -10);
             boundary_LRUD.Insert(1, 10);
             boundary_LRUD.Insert(2, 10);

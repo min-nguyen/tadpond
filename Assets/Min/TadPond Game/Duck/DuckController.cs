@@ -6,7 +6,7 @@ using UnityEngine;
 public class DuckController : MonoBehaviour, OrganismInterface {
 
     //Movement Related Variables
-    public List<int> boundary_LRUD;
+    public List<float> boundary_LRUD;
     private bool facingRight;
     private bool returningFromEat;
     private float moveTimer = 0f;
@@ -25,7 +25,7 @@ public class DuckController : MonoBehaviour, OrganismInterface {
     //Core Components
     private GameObject DETECTOR;
     private GameObject DUCK_GOD;
-    private DuckState state;
+    public DuckState state;
     private Animator animator;
 
     public enum DuckState{
@@ -42,11 +42,11 @@ public class DuckController : MonoBehaviour, OrganismInterface {
         returningFromEat = false;
         originalY = transform.position.y;
         originalX = transform.position.x;
-        hoverScale = transform.localScale.y * 0.3f;
+        hoverScale = transform.localScale.y * 0.15f;
         if (boundary_LRUD.Count < 4)
         {
             // Debug.Log("Boundary LRUD for DuckController is not initialised in inspector with 4 values - creating default boundaries");
-            boundary_LRUD = new List<int>();
+            boundary_LRUD = new List<float>();
             boundary_LRUD.Insert(0, -10);
             boundary_LRUD.Insert(1, 10);
             boundary_LRUD.Insert(2, 10);
@@ -69,23 +69,43 @@ public class DuckController : MonoBehaviour, OrganismInterface {
         else
             Destroy(this.gameObject);
     }
+    public DuckState GetState()
+    {
+        return state;
+    }
+    public bool IsEating()
+    {
+        if (state == DuckState.Eat)
+            return true;
+        else
+            return false;
+    }
 
-  
-
-	// Update is called once per frame
-	void Update () {
-		if(state == DuckState.Swim)
+    // Update is called once per frame
+    void Update () {
+        originalY = boundary_LRUD[2] + 0.5f;
+        if (state == DuckState.Swim)
         {
             animator.SetBool("Eating", false);
             Swim();
         }
-        else if(state == DuckState.Eat && target != null)
+        else if (state == DuckState.Eat)
         {
             animator.SetBool("Eating", true);
             Eat();
         }
-	}
 
+	}
+    void OnTriggerEnter2D(Collider2D coll)
+    {
+        //if (state == DuckState.Eat && target != null)
+        //{
+        //    GameObject prey = coll.gameObject;
+        //    OrganismInterface oi = prey.GetComponent<OrganismInterface>();
+        //    oi.Die();
+        //    Debug.Log("COLL");
+        //}
+    }
     void Swim()
     {
         moveTimer += Time.deltaTime;
@@ -148,10 +168,6 @@ public class DuckController : MonoBehaviour, OrganismInterface {
         }
     }
 
-    public DuckState GetState()
-    {
-        return state;
-    }
 
     public float Magnitude(float n)
     {

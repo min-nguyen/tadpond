@@ -172,6 +172,7 @@
     <Compile Include="Assets\Min\TadPond Game\Waterflea\WaterfleaGod.cs" />
     <Compile Include="Assets\Min\TadPond Game\Zooplankton\ZooplanktonController.cs" />
     <Compile Include="Assets\Min\TadPond Game\Zooplankton\ZooplanktonGod.cs" />
+    <Compile Include="Assets\RainController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Min\Save Game\Resources\entities.xml" />

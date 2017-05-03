@@ -7,7 +7,7 @@ public class Tadpole_Age1_Controller : MonoBehaviour, OrganismInterface {
     private GameObject MAIN_TADPOLE_CONTROLLER;
     private TadpoleController MAIN_TADPOLE_CONTROLLER_SCRIPT;
     //MOVEMENT RELATED VARIABLES
-    public List<int> boundary_LRUD;
+    public List<float> boundary_LRUD;
     private Vector3 target;
     private float minVelocity;
     private float maxVelocity;
@@ -24,7 +24,7 @@ public class Tadpole_Age1_Controller : MonoBehaviour, OrganismInterface {
         if (boundary_LRUD.Count < 4)
         {
            // Debug.Log("Boundary LRUD for TadpoleAge1 is not initialised in inspector with 4 values - creating default boundaries");
-            boundary_LRUD = new List<int>();
+            boundary_LRUD = new List<float>();
             boundary_LRUD.Insert(0, -10);
             boundary_LRUD.Insert(1, 10);
             boundary_LRUD.Insert(2, 10);
@@ -56,6 +56,8 @@ public class Tadpole_Age1_Controller : MonoBehaviour, OrganismInterface {
         if (prey.Contains(col.gameObject.tag))
         {
             Eat(col);
+            OrganismInterface oi = col.gameObject.GetComponent<OrganismInterface>();
+            oi.Die();
         }
     }
 

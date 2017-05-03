@@ -6,7 +6,7 @@ public class ZooplanktonController : MonoBehaviour, OrganismInterface  {
 
     private GameObject ZOOPLANKTON_GOD;
     //MOVEMENT//    moveTimer & pauseDelay used to pause zooplankton at intervals
-    public List<int> boundary_LRUD;
+    public List<float> boundary_LRUD;
     private float moveTimer = 0f;
     private float pauseDelay = 1f;
     private float speed = 0.05f;
@@ -29,7 +29,7 @@ public class ZooplanktonController : MonoBehaviour, OrganismInterface  {
         if (boundary_LRUD.Count < 4)
         {
             Debug.Log("Boundary LRUD for ZooPlanktonController is not initialised in inspector with 4 values - creating default boundaries");
-            boundary_LRUD = new List<int>();
+            boundary_LRUD = new List<float>();
             boundary_LRUD.Insert(0, -10);
             boundary_LRUD.Insert(1, 10);
             boundary_LRUD.Insert(2, 10);

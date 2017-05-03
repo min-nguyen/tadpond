@@ -6,7 +6,7 @@ public class WaterfleaController : MonoBehaviour, OrganismInterface {
 
     private GameObject WATERFLEA_GOD;
     //MOVEMENT RELATED VARIABLES
-    public List<int> boundary_LRUD;
+    public List<float> boundary_LRUD;
     private Vector2 size;
     private Vector2 target;
     private bool falling = true;
@@ -24,7 +24,7 @@ public class WaterfleaController : MonoBehaviour, OrganismInterface {
         if (boundary_LRUD.Count < 4)
         {
            // Debug.Log("Boundary LRUD for WaterFleaController is not initialised in inspector with 4 values - creating default boundaries");
-            boundary_LRUD = new List<int>();
+            boundary_LRUD = new List<float>();
             boundary_LRUD.Insert(0, -10);
             boundary_LRUD.Insert(1, 10);
             boundary_LRUD.Insert(2, 10);

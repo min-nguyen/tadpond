@@ -18,10 +18,11 @@ public class AlgaeController : MonoBehaviour {
     }
 
 	void Update () {
+
 	}
 
     public void IncreaseHealth(){
-        if (Health < 10){
+        if (Health < 20){
             Health++;
             ParticleSys.emissionRate = Health * EmissionScale;
         }
@@ -38,7 +39,7 @@ public class AlgaeController : MonoBehaviour {
 
     public void SetHealth(float h)
     {
-        if (h >= 0 && h <= 10) { 
+        if (h >= 0 && h <= 20) { 
             Health = h;
             ParticleSys.emissionRate = Health * EmissionScale;
         }

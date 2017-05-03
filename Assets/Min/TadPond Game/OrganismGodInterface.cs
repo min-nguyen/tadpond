@@ -14,7 +14,7 @@ public interface OrganismGodInterface {
                                     float pH, 
                                     float oxygen, 
                                     float algaeHealth);
-    void SetBoundaryLRUD(List<int> LRUD);
+    void SetBoundaryLRUD(List<float> LRUD);
     void Kill(GameObject organism);
 }
 

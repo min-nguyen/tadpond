@@ -6,7 +6,7 @@ public class FishGod : MonoBehaviour, OrganismGodInterface{
 
     public GameObject BITTERLING;
     public GameObject CARP;
-    public List<int> boundary_LRUD;
+    public List<float> boundary_LRUD;
     private List<GameObject> fish = new List<GameObject>();
     private float POPULATION = 0;
     private float timer = 0f;
@@ -18,7 +18,7 @@ public class FishGod : MonoBehaviour, OrganismGodInterface{
         GetComponent<SpriteRenderer>().enabled = false;
         if (boundary_LRUD.Count < 4)
         {
-            boundary_LRUD = new List<int>();
+            boundary_LRUD = new List<float>();
             boundary_LRUD.Insert(0, -10);
             boundary_LRUD.Insert(1, 10);
             boundary_LRUD.Insert(2, 10);
@@ -26,13 +26,17 @@ public class FishGod : MonoBehaviour, OrganismGodInterface{
         }
     }
 
-	public void SetBoundaryLRUD(List<int> LRUD)
+	public void SetBoundaryLRUD(List<float> LRUD)
     {
-        boundary_LRUD = new List<int>();
+        boundary_LRUD = new List<float>();
         boundary_LRUD.Insert(0, LRUD[0]);
         boundary_LRUD.Insert(1, LRUD[1]);
         boundary_LRUD.Insert(2, LRUD[2]);
         boundary_LRUD.Insert(3, LRUD[3]);
+        for(int i = 0; i < fish.Count; i++)
+        {
+            fish[i].GetComponent<FishController>().boundary_LRUD = boundary_LRUD;
+        }
     }
 
     public void UpdateEnvironmentalValues(float nutrients,

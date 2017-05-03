@@ -28,10 +28,6 @@ public class TadpoleEggController : MonoBehaviour, OrganismInterface {
         {
             
         }
-        else if (predators.Contains(col.gameObject.tag))
-        {
-            Die();
-        }
     }
 
     public void SetGod(GameObject main_tadpole)

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PondWeedGod : MonoBehaviour, OrganismGodInterface{
 
     public GameObject PONDWEED;
-    public List<int> boundary_LRUD;
+    public List<float> boundary_LRUD;
     private List<GameObject> pondweed = new List<GameObject>();
     private float POPULATION = 0;
     private float timer = 0f;
@@ -19,7 +19,7 @@ public class PondWeedGod : MonoBehaviour, OrganismGodInterface{
         if (boundary_LRUD.Count < 4)
         {
             // Debug.Log("Boundary LRUD for PondWeedGod is not initialised in inspector with 4 values - creating default boundaries");
-            boundary_LRUD = new List<int>();
+            boundary_LRUD = new List<float>();
             boundary_LRUD.Insert(0, -10);
             boundary_LRUD.Insert(1, 10);
             boundary_LRUD.Insert(2, 10);
@@ -27,9 +27,9 @@ public class PondWeedGod : MonoBehaviour, OrganismGodInterface{
         }
     }
 
-    public void SetBoundaryLRUD(List<int> LRUD)
+    public void SetBoundaryLRUD(List<float> LRUD)
     {
-        boundary_LRUD = new List<int>();
+        boundary_LRUD = new List<float>();
         boundary_LRUD.Insert(0, LRUD[0]);
         boundary_LRUD.Insert(1, LRUD[1]);
         boundary_LRUD.Insert(2, LRUD[2]);
@@ -39,7 +39,7 @@ public class PondWeedGod : MonoBehaviour, OrganismGodInterface{
     void InitialisePondWeed()
     {
         //Set up pond weed
-        for (int i = boundary_LRUD[0]; i < boundary_LRUD[1]; i += 2)
+        for (int i = (int)boundary_LRUD[0]; i < boundary_LRUD[1]; i += 2)
         {
             float randY = Random.Range(-1, 1);
             Spawn(1, new Vector3(i, boundary_LRUD[3] + randY));

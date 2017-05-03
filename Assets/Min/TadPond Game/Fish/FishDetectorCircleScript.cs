@@ -6,19 +6,18 @@ public class FishDetectorCircleScript : MonoBehaviour {
 
     private GameObject Fish;
     private FishController FishStateController;
-    private Transform target;
+  //  private Transform target;
     private List<string> preyToDetect;
 
 	void Start () {
         Fish =  transform.parent.gameObject;
         FishStateController = transform.parent.gameObject.GetComponent<FishController>();
-        target = FishStateController.getTarget();
         preyToDetect = FishStateController.prey;
 
     }
 	
 	void Update () {
-
+        Debug.Log(FishStateController.currentState.ToString());
     }
 
     void setTarget(Transform trans)
@@ -40,7 +39,8 @@ public class FishDetectorCircleScript : MonoBehaviour {
     //Sets a chase target only if health < 4 and not in idle state (hovering)
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (preyToDetect.Contains(coll.tag) && FishStateController.currentState.ToString() != "IdleState" /*&& FishStateController.GetHealth() < 4*/)
+       
+        if (FishStateController.getTarget() == null && preyToDetect.Contains(coll.tag) && FishStateController.currentState.ToString() != "IdleState" /*&& FishStateController.GetHealth() < 4*/)
         {
             FishStateController.setTarget(coll.transform);
             FishStateController.setToChaseState();
